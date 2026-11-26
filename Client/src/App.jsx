@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import Item from "./Item.jsx";
+import Herois from "./Herois.jsx";
 
 function App() {
   const [filter, setFilter] = useState("Todos");
@@ -42,6 +42,28 @@ function App() {
 
   if (sorted) {
     visible = [...visible].sort((a, b) => b.attack - a.attack);
+  }
+
+  async function handleDelete(id) {
+    try {
+      const res = await fetch(
+        `http://localhost:3000/api/herois/${id}`,
+        {
+          method: "DELETE"
+        }
+      );
+
+      if (!res.ok) {
+        throw new Error("Não foi possível apagar o herói.");
+      }
+
+      setHerois((prevHerois) =>
+        prevHerois.filter((heroi) => heroi.id !== id)
+      );
+
+    } catch (error) {
+      alert(error.message);
+    }
   }
 
   async function pickRandom() {
@@ -149,9 +171,10 @@ function App() {
           ) : (
             <ul>
               {visible.map((heroi) => (
-                <Item
+                <Herois
                   key={heroi.id}
                   {...heroi}
+                  onDelete={handleDelete}
                 />
               ))}
             </ul>
