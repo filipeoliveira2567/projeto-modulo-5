@@ -1,0 +1,40 @@
+{
+  "herois": [
+    {
+      "name": "Tracer",
+      "type": "Dano",
+      "attack": 9,
+      "defense": 5
+    },
+    {
+      "name": "Reinhardt",
+      "type": "Tanque",
+      "attack": 6,
+      "defense": 10
+    },
+    {
+      "name": "Mercy",
+      "type": "Suporte",
+      "attack": 3,
+      "defense": 7
+    },
+    {
+      "name": "Genji",
+      "type": "Dano",
+      "attack": 9,
+      "defense": 6
+    },
+    {
+      "name": "D.Va",
+      "type": "Tanque",
+      "attack": 8,
+      "defense": 9
+    },
+    {
+      "name": "Kiriko",
+      "type": "Suporte",
+      "attack": 6,
+      "defense": 8
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Card({ name, type, attack, defense }) {
+function herois({ name, type, attack, defense }) {
 
   return (
     <li>
@@ -9,5 +9,12 @@ function Card({ name, type, attack, defense }) {
     </li>
   );
 }
+function save() {
+  fs.writeFileSync(
+    filePath,
+    JSON.stringify({ herois: herois }, null, 2),
+    "utf8"
+  );
+}
 
-export default Card;
+export default herois;
